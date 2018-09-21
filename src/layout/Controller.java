@@ -68,14 +68,7 @@ public class Controller {
         HDU_Logger.appendLog(msg, storeNumber);
         ButtonFunctions.pingBackOffice(storeNumber);
     }
-
-    /**
-     * Method checkRBTN sets the user data for the radio btns
-     * then checks that one is selected, and sets rval to the
-     * user data. Using that string, it logs the activity and
-     * calls pingDevice via command prompt.
-     * @throws IOException
-     */
+    
     @FXML
     void checkRBTNDevices() throws IOException {
         pingATG.setUserData("atg");
