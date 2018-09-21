@@ -1,0 +1,26 @@
+.root {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab-header-background {
+    -fx-background-color: #999;
+}
+
+#btn {
+    -fx-background-color: #444;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #ddd;
+}
+
+#text {
+    -fx-text-fill: #ddd;
+}
+
+#bg {
+    -fx-background-color: #666;
+}
+
+#bg_menu {
+    -fx-background-color: #666;
+}

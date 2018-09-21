@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="699.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.Controller">
+   <center>
+      <AnchorPane id="bg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="850.0" translateY="-37.0">
+         <children>
+            <TabPane id="bg" prefHeight="614.0" prefWidth="850.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                  <Tab id="bg_menu" text="Ping ">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="850.0">
+                           <children>
+                              <Button id="btn" fx:id="pingBO" layoutX="248.0" layoutY="66.0" mnemonicParsing="false" onAction="#execRegularPing" prefHeight="27.0" prefWidth="133.0" text="Ping Back Office" textFill="#070707" />
+                              <Button id="btn" fx:id="pingDevice" layoutX="665.0" layoutY="181.0" mnemonicParsing="false" onAction="#checkRBTNDevices" prefWidth="100.0" text="Ping Device" />
+                              <Button id="btn" fx:id="pingNode" layoutX="665.0" layoutY="364.0" mnemonicParsing="false" onAction="#checkRBTNNodes" prefWidth="100.0" text="Ping Node" />
+                              <Label id="text" layoutX="25.0" layoutY="14.0" prefHeight="29.0" prefWidth="60.0" text="Store: ">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="text" fx:id="ping_sn" layoutX="86.0" layoutY="14.0" prefHeight="29.0" prefWidth="326.0" text="FCE-****">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="text" layoutX="25.0" layoutY="65.0" prefHeight="29.0" prefWidth="118.0" text="Back Office: ">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="text" layoutX="25.0" layoutY="148.0" prefHeight="29.0" prefWidth="118.0" text="Device:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="text" layoutX="25.0" layoutY="294.0" prefHeight="29.0" prefWidth="118.0" text="NCR Nodes:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <RadioButton id="text" fx:id="pingATG" layoutX="164.0" layoutY="163.0" mnemonicParsing="false" text="ATG">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="pingDevices" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton id="text" fx:id="pingSC" layoutX="314.0" layoutY="163.0" mnemonicParsing="false" text="Site Controller" toggleGroup="$pingDevices" />
+                              <RadioButton id="text" fx:id="pingCommander" layoutX="165.0" layoutY="201.0" mnemonicParsing="false" text="Commander" toggleGroup="$pingDevices" />
+                              <RadioButton id="text" fx:id="ping315" layoutX="314.0" layoutY="201.0" mnemonicParsing="false" text="Cybera" toggleGroup="$pingDevices" />
+                              <RadioButton id="text" fx:id="node1" layoutX="168.0" layoutY="309.0" mnemonicParsing="false" text="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="pingNodes" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton id="text" fx:id="node2" layoutX="168.0" layoutY="360.0" mnemonicParsing="false" text="2" toggleGroup="$pingNodes" />
+                              <RadioButton id="text" fx:id="node3" layoutX="168.0" layoutY="410.0" mnemonicParsing="false" text="3" toggleGroup="$pingNodes" />
+                              <RadioButton id="text" fx:id="node45" layoutX="318.0" layoutY="309.0" mnemonicParsing="false" text="45" toggleGroup="$pingNodes" />
+                              <RadioButton id="text" fx:id="node46" layoutX="318.0" layoutY="360.0" mnemonicParsing="false" text="46" toggleGroup="$pingNodes" />
+                              <RadioButton id="text" fx:id="node47" layoutX="318.0" layoutY="410.0" mnemonicParsing="false" text="47" toggleGroup="$pingNodes" />
+                              <Separator layoutY="45.0" prefWidth="850.0" />
+                              <Separator layoutY="125.0" prefWidth="850.0" />
+                              <Separator layoutY="262.0" prefWidth="850.0" />
+                              <Button id="btn" fx:id="pingConstant" layoutX="476.0" layoutY="66.0" mnemonicParsing="false" onAction="#execConstantPing" prefHeight="27.0" prefWidth="126.0" text="Constant Ping" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab id="bg_menu" text="Reboot">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button id="btn" fx:id="rebootBOPC" layoutX="295.0" layoutY="76.0" mnemonicParsing="false" onAction="#rebootBPOC" text="Reboot BOPC" />
+                              <Button id="btn" layoutX="571.0" layoutY="240.0" mnemonicParsing="false" onAction="#checkRBTNRebootPOS" text="Reboot POS" />
+                              <Button id="btn" layoutX="571.0" layoutY="378.0" mnemonicParsing="false" onAction="#checkRBTNRebootKiosk" text="Reboot Kiosk" />
+                              <Button id="btn" layoutX="571.0" layoutY="522.0" mnemonicParsing="false" onAction="#checkRBTNRebootOther" text="Reboot Device" />
+                               <Label id="text" layoutX="25.0" layoutY="14.0" prefHeight="29.0" prefWidth="60.0" text="Store: ">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                               <Label id="text" fx:id="reboot_sn" layoutX="86.0" layoutY="14.0" prefHeight="29.0" prefWidth="179.0" text="FCE-****">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="text" layoutX="25.0" layoutY="145.0" prefHeight="29.0" prefWidth="118.0" text="NCR Nodes: ">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="text" layoutX="25.0" layoutY="75.0" prefHeight="29.0" prefWidth="118.0" text="PC:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="text" layoutX="86.0" layoutY="193.0" prefHeight="29.0" prefWidth="118.0" text="POS:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="text" layoutX="86.0" layoutY="339.0" prefHeight="29.0" prefWidth="118.0" text="Kiosks:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="text" layoutX="86.0" layoutY="483.0" prefHeight="29.0" prefWidth="118.0" text="Other:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <RadioButton id="text" fx:id="rebootPOS1" layoutX="235.0" layoutY="199.0" mnemonicParsing="false" text="POS 1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="rebootPOS" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton id="text" fx:id="rebootPOS2" layoutX="235.0" layoutY="241.0" mnemonicParsing="false" text="POS 2" toggleGroup="$rebootPOS" />
+                              <RadioButton id="text" fx:id="rebootPOS3" layoutX="235.0" layoutY="283.0" mnemonicParsing="false" text="POS 3" toggleGroup="$rebootPOS" />
+                              <RadioButton id="text" fx:id="rebootK45" layoutX="235.0" layoutY="345.0" mnemonicParsing="false" text="Node 45">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="rebootKiosk" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton id="text" fx:id="rebootK46" layoutX="235.0" layoutY="387.0" mnemonicParsing="false" text="Node 46" toggleGroup="$rebootKiosk" />
+                              <RadioButton id="text" fx:id="rebootK47" layoutX="234.0" layoutY="429.0" mnemonicParsing="false" text="Node 47" toggleGroup="$rebootKiosk" />
+                              <RadioButton id="text" fx:id="rebootOFC" layoutX="238.0" layoutY="498.0" mnemonicParsing="false" text="Fuel Controller">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="rebootOther" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton id="text" fx:id="rebootKPS" layoutX="237.0" layoutY="540.0" mnemonicParsing="false" text="KPS" toggleGroup="$rebootOther" />
+                               <Separator layoutY="45.0" prefWidth="850.0" />
+                              <Separator layoutY="144.0" prefWidth="850.0" />
+                              <Separator layoutY="320.0" prefWidth="850.0" />
+                              <Separator layoutY="469.0" prefWidth="850.0" />
+                              <Separator layoutY="173.0" prefWidth="850.0" />
+                              <Button id="btn" fx:id="rebootSC" layoutX="548.0" layoutY="76.0" mnemonicParsing="false" onAction="#rebootSC" text="Reboot Site Controller" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab id="bg_menu" text="Processes">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                               <Label id="text" layoutX="25.0" layoutY="14.0" prefHeight="29.0" prefWidth="60.0" text="Store: ">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                               <Label id="text" fx:id="term_sn" layoutX="86.0" layoutY="14.0" prefHeight="29.0" prefWidth="158.0" text="FCE-****">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="text" layoutX="25.0" layoutY="75.0" prefHeight="29.0" prefWidth="118.0" text="Reporting:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="text" layoutX="25.0" layoutY="201.0" prefHeight="29.0" prefWidth="118.0" text="Browsers:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <RadioButton id="text" fx:id="chrome" layoutX="215.0" layoutY="207.0" mnemonicParsing="false" text="Chrome">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="browsers" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton id="text" fx:id="firefox" layoutX="215.0" layoutY="250.0" mnemonicParsing="false" text="Firefox" toggleGroup="$browsers" />
+                              <RadioButton id="text" fx:id="ie" layoutX="215.0" layoutY="292.0" mnemonicParsing="false" text="Internet Explorer" toggleGroup="$browsers" />
+                              <RadioButton id="text" fx:id="pdiDT" layoutX="220.0" layoutY="79.0" mnemonicParsing="false" text="PDI Desktop">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="reporting" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton id="text" fx:id="openOffice" layoutX="221.0" layoutY="127.0" mnemonicParsing="false" text="Open Office" toggleGroup="$reporting" />
+                               <Separator layoutY="45.0" prefWidth="850.0" />
+                              <Separator layoutY="334.0" prefWidth="850.0" />
+                              <Separator layoutY="170.0" prefWidth="850.0" />
+                              <Button id="btn" layoutX="562.0" layoutY="98.0" mnemonicParsing="false" onAction="#checkRBTNTermReporting" text="Terminate Process" />
+                              <Button id="btn" layoutX="562.0" layoutY="245.0" mnemonicParsing="false" onAction="#checkRBTNTermBrowser" text="Close Browser" />
+                              <Button id="btn" layoutX="318.0" layoutY="367.0" mnemonicParsing="false" onAction="#execCleanUp" text="Run Clean Up Script" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+</BorderPane>
