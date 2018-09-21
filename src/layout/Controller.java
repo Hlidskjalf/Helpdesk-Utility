@@ -68,7 +68,7 @@ public class Controller {
         HDU_Logger.appendLog(msg, storeNumber);
         ButtonFunctions.pingBackOffice(storeNumber);
     }
-    
+
     @FXML
     void checkRBTNDevices() throws IOException {
         pingATG.setUserData("atg");

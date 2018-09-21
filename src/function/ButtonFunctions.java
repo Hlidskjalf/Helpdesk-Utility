@@ -8,16 +8,6 @@ import java.io.IOException;
 
 public class ButtonFunctions {
 
-    // PSEXEC specific variables
-    static String primer = "cmd.exe /c start ";
-    static String psexec = "psexec ";
-    static String bo = "\\\\fce-";
-    static String bouser = " -u helpdesk ";
-    static String bopw = "-p LimeCoke ";
-    static String sc = "\\\\radiant-";
-    static String scuser = " -u Administrator ";
-    static String scpw = " -p 6.12rgr84u ";
-
     /**
      * Simple method to spawn a command prompt and run the specified command.
      * @param cmd
