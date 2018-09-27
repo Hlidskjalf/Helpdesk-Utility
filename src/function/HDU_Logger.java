@@ -12,7 +12,7 @@ import java.util.Calendar;
 
 public class HDU_Logger {
 
-    static String logfile = "/Users/avroman/Projects/Java/HelpdeskUtility/src/logs/hdu.log";
+    static String logfile = "C:\\System\\hdu.log";
     static FileWriter writer;
 
     /**

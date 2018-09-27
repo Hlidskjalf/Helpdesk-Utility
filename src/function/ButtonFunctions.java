@@ -8,7 +8,15 @@ import java.io.IOException;
 
 public class ButtonFunctions {
 
-    
+    // PSEXEC specific variables (delete this before pushing to git)
+    static String primer = "cmd.exe /c start ";
+    static String psexec = "psexec ";
+    static String bo = "\\\\fce-";
+    static String bouser = " -u helpdesk ";
+    static String bopw = "-p LimeCoke ";
+    static String sc = "\\\\radiant-";
+    static String scuser = " -u Administrator ";
+    static String scpw = " -p 6.12rgr84u ";
 
     /**
      * Simple method to spawn a command prompt and run the specified command.
@@ -56,67 +64,67 @@ public class ButtonFunctions {
     public static void constantPing(String storeNumber) {
         String cmd = primer + "ping fce-" + storeNumber + " -t";
 
-        commandBuilder(cmd);
+        runCMD(cmd);
     }
 
     public static void pingBackOffice(String storeNumber) {
         String cmd = primer + "ping fce-" + storeNumber;
 
-        commandBuilder(cmd);
+        runCMD(cmd);
     }
 
     public static void pingDevice(String value, String storeNumber) {
         String cmd = primer + "ping " + value + "-" + storeNumber + " -t";
 
-        commandBuilder(cmd);
+        runCMD(cmd);
     }
 
     public static void pingNode(String value, String storeNumber) {
         String cmd = primer + psexec + sc + storeNumber + scuser + scpw + "-h ping " + value + " -t";
 
-        commandBuilder(cmd);
+        runCMD(cmd);
     }
 
     public static void rebootBackOffice (String storeNumber) {
         String cmd = primer + psexec + bo + storeNumber + bouser + bopw + "shutdown -r -f";
 
-        commandBuilder(cmd);
+        runCMD(cmd);
     }
 
     public static void rebootSiteController (String storeNumber) {
         String cmd = primer + psexec + sc + storeNumber + scuser + scpw + "shutdown -r -f";
 
-        commandBuilder(cmd);
+        runCMD(cmd);
     }
 
     public static void rebootPOS (String rval, String storeNumber) {
         String cmd = primer + psexec + sc + storeNumber + scuser + scpw + "mcreset " + rval;
 
-        commandBuilder(cmd);
+        runCMD(cmd);
     }
 
     public static void rebootKiosk (String rval, String storeNumber) {
         String cmd = primer + psexec + sc + storeNumber + scuser + scpw + "mcreset " + rval;
 
-        commandBuilder(cmd);
+        runCMD(cmd);
     }
 
     public static void rebootOther (String rval, String storeNumber) {
         String cmd = primer + psexec + sc + storeNumber + scuser + scpw + "mcreset " + rval;
 
-        commandBuilder(cmd);
+        runCMD(cmd);
     }
 
     public static void termSoftware (String rval, String storeNumber) {
         String cmd = primer + psexec + bo + storeNumber + bouser + bopw + "taskkill /f /im " + rval;
 
-        commandBuilder(cmd);
+        runCMD(cmd);
     }
 
     public static void cleanUp (String storeNumber) {
         String cmd = primer + psexec + bo + storeNumber + bouser + bopw + "C:\\Install\\clean_up.bat";
 
-        commandBuilder(cmd);
+        runCMD(cmd);
     }
 
     public static void close_app() {

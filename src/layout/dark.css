@@ -4,23 +4,40 @@
 }
 
 .tab-header-background {
-    -fx-background-color: #999;
+    -fx-background-color: #9E9E9E;
 }
 
 #btn {
-    -fx-background-color: #444;
+    -fx-background-color: #616161;
     -fx-background-radius: 5px;
-    -fx-text-fill: #ddd;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 5px;
+    -fx-text-fill: #E0E0E0;
 }
 
 #text {
-    -fx-text-fill: #ddd;
+    -fx-text-fill: #E0E0E0;
 }
 
 #bg {
-    -fx-background-color: #666;
+    -fx-background-color: #424242;
 }
 
 #bg_menu {
-    -fx-background-color: #666;
+    -fx-background-color: #616161;
+    -fx-text-base-color: #E0E0E0;
+}
+
+.menu-item .label{
+    -fx-text-fill: #424242;
+}
+
+#tab {
+    -fx-background-color: #616161;
+    -fx-text-base-color: #E0E0E0;
+}
+
+#store {
+    -fx-font-size: 15pt;
+    -fx-text-fill: #E0E0E0;
 }

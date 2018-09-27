@@ -27,6 +27,7 @@ public class Main extends Application {
     private String light = getClass().getResource("light.css").toExternalForm();
     private String dark = getClass().getResource("dark.css").toExternalForm();
     private String solarized = getClass().getResource("solarized.css").toExternalForm();
+    private String standard = getClass().getResource("default.css").toExternalForm();
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -36,8 +37,9 @@ public class Main extends Application {
         root = FXMLLoader.load(getClass().getResource("layout.fxml"));
         root.setId("bg_menu");
         primaryStage.initStyle(StageStyle.TRANSPARENT);
-        Scene scene = new Scene(root, 850, 670);
+        Scene scene = new Scene(root, 850, 680);
         primaryStage.setScene(scene);
+        scene.getStylesheets().add(standard);
 
         // File menu
         Menu file = new Menu("File");
@@ -52,11 +54,13 @@ public class Main extends Application {
         MenuItem lightTheme = new MenuItem("Light");
         MenuItem darkTheme = new MenuItem("Dark");
         MenuItem solarizedTheme = new MenuItem("Solarized");
+        MenuItem defaultTheme = new MenuItem("Default");
 
         // Add items to themeMenu
         themeMenu.getItems().add(lightTheme);
         themeMenu.getItems().add(darkTheme);
         themeMenu.getItems().add(solarizedTheme);
+        themeMenu.getItems().add(defaultTheme);
 
         // Exit option
         MenuItem exit = new MenuItem("Exit");
@@ -84,11 +88,13 @@ public class Main extends Application {
         root.setTop(menuBar);
         menuBar.setId("bg_menu");
 
-        Label label1 = new Label("Store: " + storeNumber);
-        //label1.setTranslateY(0);
-        //label1.setTranslateX(100);
+        Label storeLabel = new Label("Store: " + storeNumber);
 
-        root.bottomProperty().setValue(label1);
+        //label1.setTranslateY(0);
+        storeLabel.setTranslateX(10);
+        storeLabel.setId("store");
+
+        root.bottomProperty().setValue(storeLabel);
 
         /********************
          * MenuItem methods *
@@ -113,7 +119,7 @@ public class Main extends Application {
                 Optional<String> result = dialog.showAndWait();
                 if (result.isPresent()){
                     storeNumber = result.get();
-                    label1.setText("Store: " + storeNumber);
+                    storeLabel.setText("Store: " + storeNumber);
                     String msg = " The store number was successfully updated to: ";
                     HDU_Logger.appendLog(msg, storeNumber);
                 }
@@ -125,6 +131,8 @@ public class Main extends Application {
             @Override
             public void handle(ActionEvent event) {
                 scene.getStylesheets().remove(dark);
+                scene.getStylesheets().remove(standard);
+                scene.getStylesheets().remove(solarized);
                 if(!scene.getStylesheets().contains(light)) scene.getStylesheets().add(light);
             }
         });
@@ -134,6 +142,8 @@ public class Main extends Application {
             @Override
             public void handle(ActionEvent event) {
                 scene.getStylesheets().remove(light);
+                scene.getStylesheets().remove(standard);
+                scene.getStylesheets().remove(solarized);
                 if(!scene.getStylesheets().contains(dark)) scene.getStylesheets().add(dark);
             }
         });
@@ -144,7 +154,19 @@ public class Main extends Application {
             public void handle(ActionEvent event) {
                 scene.getStylesheets().remove(light);
                 scene.getStylesheets().remove(dark);
+                scene.getStylesheets().remove(standard);
                 if(!scene.getStylesheets().contains(solarized)) scene.getStylesheets().add(solarized);
+            }
+        });
+
+        // Changes the theme back to the default
+        defaultTheme.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                scene.getStylesheets().remove(light);
+                scene.getStylesheets().remove(dark);
+                scene.getStylesheets().remove(solarized);
+                if(!scene.getStylesheets().contains(standard)) scene.getStylesheets().add(standard);
             }
         });
 

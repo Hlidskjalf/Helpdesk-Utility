@@ -18,9 +18,9 @@
          <children>
             <TabPane id="bg" prefHeight="614.0" prefWidth="850.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
-                  <Tab id="bg_menu" text="Ping ">
+                  <Tab id="tab" text="Ping ">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="850.0">
+                      <AnchorPane id="bg" minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="850.0">
                            <children>
                               <Button id="btn" fx:id="pingBO" layoutX="248.0" layoutY="66.0" mnemonicParsing="false" onAction="#execRegularPing" prefHeight="27.0" prefWidth="133.0" text="Ping Back Office" textFill="#070707" />
                               <Button id="btn" fx:id="pingDevice" layoutX="665.0" layoutY="181.0" mnemonicParsing="false" onAction="#checkRBTNDevices" prefWidth="100.0" text="Ping Device" />
@@ -76,7 +76,7 @@
                         </AnchorPane>
                     </content>
                   </Tab>
-                  <Tab id="bg_menu" text="Reboot">
+                  <Tab id="tab" text="Reboot">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
@@ -149,7 +149,7 @@
                         </AnchorPane>
                     </content>
                   </Tab>
-                  <Tab id="bg_menu" text="Processes">
+                  <Tab id="tab" text="Processes">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
