@@ -16,9 +16,6 @@ public class Controller {
      ************************/
 
     @FXML
-    Label ping_sn, reboot_sn, term_sn;
-
-    @FXML
     Button pingBO, pingConstant;
 
     // Device group

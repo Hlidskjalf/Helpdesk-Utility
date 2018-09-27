@@ -25,16 +25,6 @@
                               <Button id="btn" fx:id="pingBO" layoutX="248.0" layoutY="66.0" mnemonicParsing="false" onAction="#execRegularPing" prefHeight="27.0" prefWidth="133.0" text="Ping Back Office" textFill="#070707" />
                               <Button id="btn" fx:id="pingDevice" layoutX="665.0" layoutY="181.0" mnemonicParsing="false" onAction="#checkRBTNDevices" prefWidth="100.0" text="Ping Device" />
                               <Button id="btn" fx:id="pingNode" layoutX="665.0" layoutY="364.0" mnemonicParsing="false" onAction="#checkRBTNNodes" prefWidth="100.0" text="Ping Node" />
-                              <Label id="text" layoutX="25.0" layoutY="14.0" prefHeight="29.0" prefWidth="60.0" text="Store: ">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label id="text" fx:id="ping_sn" layoutX="86.0" layoutY="14.0" prefHeight="29.0" prefWidth="326.0" text="FCE-****">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
                               <Label id="text" layoutX="25.0" layoutY="65.0" prefHeight="29.0" prefWidth="118.0" text="Back Office: ">
                                  <font>
                                     <Font size="18.0" />
@@ -84,16 +74,6 @@
                               <Button id="btn" layoutX="571.0" layoutY="240.0" mnemonicParsing="false" onAction="#checkRBTNRebootPOS" text="Reboot POS" />
                               <Button id="btn" layoutX="571.0" layoutY="378.0" mnemonicParsing="false" onAction="#checkRBTNRebootKiosk" text="Reboot Kiosk" />
                               <Button id="btn" layoutX="571.0" layoutY="522.0" mnemonicParsing="false" onAction="#checkRBTNRebootOther" text="Reboot Device" />
-                               <Label id="text" layoutX="25.0" layoutY="14.0" prefHeight="29.0" prefWidth="60.0" text="Store: ">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                               <Label id="text" fx:id="reboot_sn" layoutX="86.0" layoutY="14.0" prefHeight="29.0" prefWidth="179.0" text="FCE-****">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
                               <Label id="text" layoutX="25.0" layoutY="145.0" prefHeight="29.0" prefWidth="118.0" text="NCR Nodes: ">
                                  <font>
                                     <Font size="18.0" />
@@ -153,16 +133,6 @@
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                               <Label id="text" layoutX="25.0" layoutY="14.0" prefHeight="29.0" prefWidth="60.0" text="Store: ">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                               <Label id="text" fx:id="term_sn" layoutX="86.0" layoutY="14.0" prefHeight="29.0" prefWidth="158.0" text="FCE-****">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
                               <Label id="text" layoutX="25.0" layoutY="75.0" prefHeight="29.0" prefWidth="118.0" text="Reporting:">
                                  <font>
                                     <Font size="18.0" />
